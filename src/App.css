@@ -1,0 +1,33 @@
+.NyaChart {
+  text-align: center;
+}
+
+.NyaChart-header {
+  background-color: #222;
+  height: 50px;
+  padding: 20px;
+  color: white;
+  font-size: 20pt;
+  line-height: 50px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.NyaChart-histogrambox {
+    height: 500px;
+}
+.NyaChart-histogramcode {
+    height: 100%;
+    width: 30%;
+    background-color: #222;
+    color: #FFF;
+    float: left;
+}
+.NyaChart-histogramview {
+    height: 100%;
+    width: 70%;
+    background-color: #f0f0f0;
+    float: right;
+}
