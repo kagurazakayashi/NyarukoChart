@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+import logo from './logo.gif';
 import './App.css';
+import NCHistogram from './NCHistogram/NCHistogram.js';
 
 class App extends Component {
     constructor(props) {
@@ -41,11 +42,13 @@ class App extends Component {
         return (
         <div className="NyaChart">
             <header className="NyaChart-header">
-            柱状图(histogram)
+            <img src={logo} />柱状图(histogram)
             </header>
             <div className="NyaChart-histogrambox">
                 <textarea className="NyaChart-histogramcode" onChange={self.histogramboxonChange.bind(self,["123"])} value={self.state.obj1}></textarea>
-                <div className="NyaChart-histogramview"></div>
+                <div className="NyaChart-histogramview">
+                <NCHistogram />
+                </div>
             </div>
         </div>
         );
