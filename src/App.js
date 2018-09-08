@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.gif';
 import './App.css';
-import NCHistogram from './NCHistogram/NCHistogram.js';
+import NCHistogramController from './NCHistogram/NCHistogramController.js';
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            obj1:""
+            jsondata:"",
+            jsondataM:""
         };
     }
     componentDidMount() {
@@ -24,30 +25,31 @@ class App extends Component {
                 return response.text();
             }
         }).then((textdata) => {
+            // var uwe = textdata;
             this.setState({
-                obj1:textdata
+                jsondata:textdata,
+                // jsondataM:uwe
             });
+
+            this.refs.NCHistogram.loadjsondata(this.state.jsondata);
         }).catch((error) => {
             this.setState({
-                obj1:error
+                jsondata:error
             });
         });
     }
     histogramboxonChange(e) {
-        console.log(e);
-        console.log(e[0]);
     }
     render() {
-        var self = this;
         return (
         <div className="NyaChart">
             <header className="NyaChart-header">
-            <img src={logo} />柱状图(histogram)
+            <img src={logo} alt="" />柱状图(histogram)
             </header>
             <div className="NyaChart-histogrambox">
-                <textarea className="NyaChart-histogramcode" onChange={self.histogramboxonChange.bind(self,["123"])} value={self.state.obj1}></textarea>
+                <textarea className="NyaChart-histogramcode" onChange={this.histogramboxonChange.bind(this)} value={this.state.jsondata}></textarea>
                 <div className="NyaChart-histogramview">
-                <NCHistogram />
+                    <NCHistogramController ref="NCHistogram" />
                 </div>
             </div>
         </div>

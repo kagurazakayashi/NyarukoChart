@@ -8,12 +8,11 @@ export default class NCHistogram extends Component {
         };
     }
     render() {
-        var self = this;
         return (
             <div className="NCHistogramBox">
                 <div className="NCHistogramNumberBox">
                     <div className="NCHistogramNumber">
-                        <span className="NCHistogramNumberL">10</span>
+                        <span className="NCHistogramNumberL">65536</span>
                         <span className="NCHistogramNumberR"></span>
                     </div>
                     <div className="NCHistogramNumber">
