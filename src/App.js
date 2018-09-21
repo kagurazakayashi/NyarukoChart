@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.gif';
 import './App.css';
-import NCHistogramController from './NCHistogram/NCHistogramController.js';
+import NCHistogramController from './NCHistogram/NCHistogram.js';
 
 class App extends Component {
     constructor(props) {
@@ -30,7 +30,6 @@ class App extends Component {
                 jsondata:textdata,
                 // jsondataM:uwe
             });
-
             this.refs.NCHistogram.loadjsondata(this.state.jsondata);
         }).catch((error) => {
             this.setState({
