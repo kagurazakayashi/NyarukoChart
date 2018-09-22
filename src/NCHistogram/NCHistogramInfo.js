@@ -5,14 +5,23 @@ export default class NCHistogramInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            info:[]
         };
     }
+    updatedata(info) {
+        this.setState({
+            info:info
+        });
+    }
     render() {
+        var self = this;
         return (
             <div className="NCHistogramColorInfo">
-                <NCHistogramInfoName data={["test1"]} ref="NCHistogramInfoName" />
-                &emsp;
-                <NCHistogramInfoName data={["test2"]} ref="NCHistogramInfoName" />
+                {
+                    self.state.info.map(function(v,i){
+                        return <NCHistogramInfoName key={i} data={v} ref="NCHistogramInfoName" />;
+                    })
+                }
             </div>
         );
     }
