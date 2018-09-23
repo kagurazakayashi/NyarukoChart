@@ -5,22 +5,23 @@ export default class NCHistogramNumberBox extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            info:[]
         };
     }
+    updatedata(info) {
+        this.setState({
+            info:info
+        });
+    }
     render() {
+        let self = this;
+        let pheight = ((100 / this.state.info.length)+"%");
         return (
-            <div className="NCHistogramNumberBox">
-                <NCHistogramNumber data={[10]} ref="NCHistogramNumber" />
-                <NCHistogramNumber data={[9]} ref="NCHistogramNumber" />
-                <NCHistogramNumber data={[8]} ref="NCHistogramNumber" />
-                <NCHistogramNumber data={[7]} ref="NCHistogramNumber" />
-                <NCHistogramNumber data={[6]} ref="NCHistogramNumber" />
-                <NCHistogramNumber data={[5]} ref="NCHistogramNumber" />
-                <NCHistogramNumber data={[4]} ref="NCHistogramNumber" />
-                <NCHistogramNumber data={[3]} ref="NCHistogramNumber" />
-                <NCHistogramNumber data={[2]} ref="NCHistogramNumber" />
-                <NCHistogramNumber data={[1]} ref="NCHistogramNumber" />
-            </div>
+            <div className="NCHistogramNumberBox">{
+                self.state.info.map(function(v,i){
+                    return <NCHistogramNumber key={i} data={v} pheight={pheight} ref="NCHistogramNumber" />;
+                })
+            }</div>
         );
     }
 }

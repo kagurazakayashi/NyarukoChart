@@ -2,6 +2,7 @@
     position: relative;
     width: 100%;
     height: 100%;
+    background-color: #FFF;
 }
 .NCHistogramNumberBox {
     position: absolute;
@@ -47,8 +48,6 @@
 .NCHistogramGroup {
     display: inline-block;
     height: calc(100% + 25px);
-    width: auto;
-    margin-right: 5px;
 }
 .NCHistogramGroupT {
     height: calc(100% - 25px);
@@ -61,11 +60,14 @@
 .NCHistogramHis {
     position: relative;
     display: inline-block;
-    width: 20px;
-    top: 20%;
-    height: 80%;
+    /* top: 20%;
+    height: 80%; */
     background: #0099FF;
-    margin-left: 5px;
+    border-style: solid;
+    border-width: 0;
+    border-left-width: 5px;
+    border-color: #FFF;
+    box-sizing: border-box;
 }
 .NCHistogramHisF {
     width: 100%;
@@ -73,8 +75,8 @@
     background: transparent;
     background: linear-gradient(to top, rgba(0,0,0,0.3) , rgba(0,0,0,0));
 }
-.NCHistogramHis:hover {
-    box-shadow: 0px 0px 1px #000;
+.NCHistogramHisF:hover {
+    background: transparent;
 }
 .NCHistogramColorInfo {
     position: absolute;

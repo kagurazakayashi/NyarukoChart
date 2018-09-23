@@ -9,7 +9,7 @@ export default class NCHistogramHis extends Component {
     }
     render() {
         return (
-            <div className="NCHistogramHis">
+            <div className="NCHistogramHis" style={{'width':this.props.hiswidth,'height':this.props.pheight,'top':this.props.ptop,'backgroundColor':this.props.colordata}}>
                 <div className="NCHistogramHisF"></div>
             </div>
         );
