@@ -98,3 +98,14 @@
     background: transparent;
     background: linear-gradient(to top, rgba(0,0,0,0.3) , rgba(0,0,0,0));
 }
+.NCHistogramFixedView {
+    position: fixed;
+    width: auto;
+    height: auto;
+    background-color: skyblue;
+    border: 1px solid #888;
+    z-index: 1;
+    padding: 1px 5px 1px 5px;
+    text-align: right;
+    border-radius:5px;
+}

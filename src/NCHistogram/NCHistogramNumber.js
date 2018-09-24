@@ -9,7 +9,7 @@ export default class NCHistogramNumber extends Component {
     render() {
         return (
             <div className="NCHistogramNumber" style={{'height':this.props.pheight}}>
-                <span className="NCHistogramNumberL">{this.props.data}</span>
+                <span className="NCHistogramNumberL"><code>{this.props.data}</code></span>
                 <span className="NCHistogramNumberR"></span>
             </div>
         );

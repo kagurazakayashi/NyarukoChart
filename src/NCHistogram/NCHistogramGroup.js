@@ -35,10 +35,10 @@ export default class NCHistogramGroup extends Component {
                 <div className="NCHistogramGroupT">{
                     self.props.data.map(function(v,i){
                         let pheight = self.props.step * v;
-                        return <NCHistogramHis hiswidth={self.props.hiswidth} colordata={self.props.colordata[i]} pheight={pheight+"%"} ptop={etop+"%"} key={i} ref="NCHistogramHis" />;
+                        return <NCHistogramHis hiswidth={self.props.hiswidth} colordata={self.props.colordata[i]} pheight={pheight+"%"} ptop={etop+"%"} groupname={self.props.groupname} tval={v} key={i} ref="NCHistogramHis" />;
                     })
                 }</div>
-                <div className="NCHistogramGroupB">{this.props.groupname}</div>
+                <div className="NCHistogramGroupB"><code>{this.props.groupname}</code></div>
             </div>
         );
     }

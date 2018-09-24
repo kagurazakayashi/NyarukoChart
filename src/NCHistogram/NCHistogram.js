@@ -32,12 +32,9 @@ export default class NCHistogram extends Component {
             xnames.unshift(nowkey);
             showdata.unshift(jdata[nowkey]);
         }
-        for (let i = 0; i < jt.length; i++) {
-            colordata.push(jt[i][1]);
-        }
         this.refs.NCHistogramNumberBox.updatedata(ynames);
         this.refs.NCHistogramInfo.updatedata(jt);
-        this.refs.NCHistogramBox.updatedata(xnames,showdata,colordata,minmax[1]);
+        this.refs.NCHistogramBox.updatedata(xnames,showdata,jt,minmax[1]);
     }
     arrmdto1d(arr) {
         return [].concat.apply([],arr);

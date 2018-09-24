@@ -9,7 +9,7 @@ export default class NCHistogramInfoName extends Component {
     render() {
         return (
             <span className="NCHistogramInfoName">
-                <div className="NCHistogramColorInfoColorB" style={{'background':this.props.data[1]}}><div className="NCHistogramColorInfoColorC"></div></div>&nbsp;{this.props.data[0]+"　"}
+                <div className="NCHistogramColorInfoColorB" style={{'background':this.props.data[1]}}><div className="NCHistogramColorInfoColorC"></div></div>&nbsp;<code>{this.props.data[0]}</code>&emsp;
             </span>
         );
     }
