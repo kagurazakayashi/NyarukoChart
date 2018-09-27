@@ -13,10 +13,12 @@ export default class NCHistogramBox extends Component {
             groupnum:0,
             hisnum:0,
             colordata:[],
-            step:0
+            pcolordata:[],
+            step:0,
+            max:0
         };
     }
-    updatedata(names,data,colordata,max) {
+    updatedata(names,data,colordata,pcolordata,max) {        
         let groupnum = data.length;
         let groupwidth = (100 / groupnum) + "%";
         let hisnum = data[0].length;
@@ -30,7 +32,9 @@ export default class NCHistogramBox extends Component {
             groupnum:groupnum,
             hisnum:hisnum,
             colordata:colordata,
-            step:step
+            step:step,
+            pcolordata:pcolordata,
+            max:max
         });
     }
     render() {
@@ -38,7 +42,7 @@ export default class NCHistogramBox extends Component {
         return (
             <div className="NCHistogramHisBox">{
                 self.state.data.map(function(v,i){
-                    return <NCHistogramGroup hiswidth={self.state.hiswidth} groupwidth={self.state.groupwidth} groupname={self.state.names[i]} colordata={self.state.colordata} step={self.state.step} data={v} key={i} ref="NCHistogramGroup" />;
+                    return <NCHistogramGroup hiswidth={self.state.hiswidth} groupwidth={self.state.groupwidth} groupname={self.state.names[i]} colordata={self.state.colordata} pcolordata={self.state.pcolordata} step={self.state.step} max={self.state.max} data={v} key={i} ref="NCHistogramGroup" />;
                 })
             }</div>
         );

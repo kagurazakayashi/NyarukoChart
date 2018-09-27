@@ -34,8 +34,21 @@ export default class NCHistogramGroup extends Component {
             <div className="NCHistogramGroup" style={{'width':this.props.groupwidth}}>
                 <div className="NCHistogramGroupT">{
                     self.props.data.map(function(v,i){
+                        //计算高度
                         let pheight = self.props.step * v;
-                        return <NCHistogramHis hiswidth={self.props.hiswidth} colordata={self.props.colordata[i]} pheight={pheight+"%"} ptop={etop+"%"} groupname={self.props.groupname} tval={v} key={i} ref="NCHistogramHis" />;
+                        let per = v / self.props.max * 100;
+                        var pcolor = "";
+                        self.props.pcolordata.map(function(pv) {
+                            if (per >= pv[0]) {
+                                pcolor = pv[1];
+                            }
+                        });
+                        if (pcolor != "") {
+                            pcolor = "linear-gradient(to top, transparent, transparent, "+pcolor+")";
+                        } else {
+                            pcolor = "transparent";
+                        }
+                        return <NCHistogramHis hiswidth={self.props.hiswidth} colordata={self.props.colordata[i]} pheight={pheight+"%"} ptop={etop+"%"} groupname={self.props.groupname} max={self.props.max} step={self.props.step} pcolor={pcolor} tval={v} key={i} ref="NCHistogramHis" />;
                     })
                 }</div>
                 <div className="NCHistogramGroupB"><code>{this.props.groupname}</code></div>

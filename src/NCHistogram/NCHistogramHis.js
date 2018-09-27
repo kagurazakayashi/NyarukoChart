@@ -28,6 +28,7 @@ export default class NCHistogramHis extends Component {
     render() {
         return (
             <div className="NCHistogramHis" style={{'width':this.props.hiswidth,'height':this.props.pheight,'top':this.props.ptop,'backgroundColor':this.props.colordata[1]}}>
+                <div className="NCHistogramHisA" style={{'background':this.props.pcolor}}></div>
                 <div className="NCHistogramHisF" onMouseOver={this.handleMouseOver.bind(this)} onMouseMove={this.handleMouseOver.bind(this)} onClick={this.handleMouseOver.bind(this)} onMouseOut={this.handleMouseOut.bind(this)}></div>
                 <div className="NCHistogramFixedView" style={{'top':this.state.y,'left':this.state.x,'display':this.state.detailShow,'backgroundColor':this.props.colordata[1]}}><code>{this.props.groupname} {this.props.colordata[0]}<br/>{this.props.tval}</code></div>
             </div>
