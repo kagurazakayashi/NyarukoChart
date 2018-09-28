@@ -16,14 +16,20 @@ export default class NCHistogram extends Component {
         let jdata = json["d"];
         let datakey = Object.keys(jdata);
         let minmax = this.arrminandmax(this.arrmdto1d(Object.values(jdata)));
-        let jx = jinfo["x"];
-        let jy = jinfo["y"];
-        let jt = jinfo["t"];
+        var jx = 10;
+        var jy = 10;
+        var jt = ["data","skyblue"];
+        var jc = [0,""];
+        if (jinfo) {
+            if (jinfo["x"]) jx = jinfo["x"];
+            if (jinfo["y"]) jy = jinfo["y"];
+            if (jinfo["t"]) jt = jinfo["t"];
+            if (jinfo["c"]) jc = jinfo["c"];
+        }
         let stepy = minmax[1] / jy;
         var ynames = [];
         var xnames = [];
         var showdata = [];
-        var colordata = [];
         for (let i = 1; i <= jy; i++) {
             ynames.unshift(Math.floor(stepy * i));
         }
@@ -34,7 +40,7 @@ export default class NCHistogram extends Component {
         }
         this.refs.NCHistogramNumberBox.updatedata(ynames);
         this.refs.NCHistogramInfo.updatedata(jt);
-        this.refs.NCHistogramBox.updatedata(xnames,showdata,jt,minmax[1]);
+        this.refs.NCHistogramBox.updatedata(xnames,showdata,jt,jc,minmax[1]);
     }
     arrmdto1d(arr) {
         return [].concat.apply([],arr);

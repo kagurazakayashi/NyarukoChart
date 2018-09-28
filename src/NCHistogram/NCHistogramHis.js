@@ -11,13 +11,22 @@ export default class NCHistogramHis extends Component {
         };
     }
     handleMouseOver(e) {
+        let winw = window.innerWidth;
+        let px = e.pageX;
+        let py = e.pageY;
+        var minfox = px;
+        var minfoy = py + 16;
+        if (px > winw - 100) {
+            minfox -= 86;
+        } else {
+            minfox += 16;
+        }
         this.setState({
             detailShow: 'block',
-            x: e.pageX + 16, //pageX是以html左上角为原点，相应的clientX是以浏览器左上角为原点
-            y: e.pageY + 16,
+            x: minfox,
+            y: minfoy,
         })
     }
-    
     handleMouseOut() { 
         this.setState({
             detailShow: 'none',
