@@ -19,6 +19,9 @@
 - `NCHistogramBox.js`
   - 图表显示框架（最外层）
   - 导入了 `NCHistogramGroup`
+  - 导入了 `NCHistogramLine`
+- `NCHistogramLine.js`
+  - 跟随鼠标移动的横线和数值提示
 - `NCHistogramGroup.js`
   - 单个组（例如1月中的多个数据）
   - 导入了 `NCHistogramHis`
@@ -35,3 +38,4 @@
   - 导入了 `NCHistogramNumber`
 - `NCHistogramNumber.js`
   - Y 轴单个刻度数字块
+- 

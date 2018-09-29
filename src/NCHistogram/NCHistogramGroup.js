@@ -34,7 +34,6 @@ export default class NCHistogramGroup extends Component {
             <div className="NCHistogramGroup" style={{'width':this.props.groupwidth}}>
                 <div className="NCHistogramGroupT">{
                     self.props.data.map(function(v,i){
-                        //计算高度
                         let pheight = self.props.step * v;
                         let per = v / self.props.max * 100;
                         var pcolor = "";
